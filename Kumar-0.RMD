@@ -1,0 +1,60 @@
+---
+title: "Kumar-0"
+author: "sanjivek"
+date: "August 31, 2015"
+output: html_document
+---
+
+
+What years are included in this data set? What are the dimensions of the data frame and what are the variable or column names?
+
+```{r}
+source("c:/Users/sanjivek/Documents/Lab0/more/present.R")
+dim(present)
+names(present)
+present$year
+plot(x=present$year,y=present$boys+present$girls,type="o")
+```
+
+
+
+How do these counts compare to Arbuthnots? Are they on a similar scale?
+
+```{r}
+source("c:/Users/sanjivek/Documents/Lab0/more/arbuthnot.R")
+source("c:/Users/sanjivek/Documents/Lab0/more/present.R")
+
+par(mfrow=c(1,2))
+plot( arbuthnot$year, arbuthnot$girls+arbuthnot$boys, type="l", col="red" )
+plot( present$year, present$boys+present$girls, type="l", col="green" )
+
+```
+
+
+Conclusion: Analyzing both the graphs, Arbuthnot data shows that initial dip in new born seens from 1640 to 1660, on the contrary US present data shows a huge population growth from 1940 to 1960 and then there is a dip in growth for 10 years till 1970 and post that till now there is popultion growth same as arbuthnot data from 1660 to 1740.
+
+
+Make a plot that displays the boy-to-girl ratio for every year in the data set. What do you see? Does Arbuthnot’s observation about boys being born in greater proportion than girls hold up in the U.S.? Include the plot in your response.
+
+```{r}
+
+par(mfrow=c(1,2))
+plot( arbuthnot$year, arbuthnot$boys/arbuthnot$girls, type="l", col="red" )
+plot( present$year, present$boys/present$girls, type="l", col="green" )
+
+```
+
+
+Conclusion: Yes, it's true for US present population also, however if you see US data closely there is continous decline in the boys to girls ratio and it is converging towards 1 which means sooner this difference will be equated.
+
+
+4.In what year did we see the most total number of births in the U.S.? You can refer to the help files or the R reference card 
+```{r}
+
+plot( present$year, present$boys+present$girls, type="h", col="blue" )
+
+```
+
+Conclusion: highest childs birth was on 1961 of 4,268,326 births.
+
+```
